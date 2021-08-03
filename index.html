@@ -83,10 +83,12 @@
 
   <script>
     
-  const modelViewerObject = document.getElementById("speaker");
+  
     
   //called on change in colour selection list
   function updateCol(){
+    let modelViewerObject = document.getElementById("speaker");
+
     const colorString = document.getElementById("color-controls").value;
     
  
@@ -126,6 +128,7 @@
 
   //called on change in colour selection list
   function updateFounderCol(){
+    let modelViewerObject = document.getElementById("founder40bstand");
     const texture = document.getElementById("founder40b-color-controls").value;
     
     let material = modelViewerObject.model.materials[0];
