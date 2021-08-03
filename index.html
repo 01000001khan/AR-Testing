@@ -127,7 +127,8 @@
   //called on change in colour selection list
   function updateFounderCol(){
     const texture = document.getElementById("founder40b-color-controls").value;
-        
+    
+    let material = modelViewerObject.model.materials[0];
     material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(texture);
     
   }
