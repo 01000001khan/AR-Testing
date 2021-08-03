@@ -117,7 +117,7 @@
     {
       console.log("Not wood");
       //material['baseColorTexture'].setTexture("/assets/textures/wood.jpg"); 
-      
+      let material = modelViewerObject.model.materials[0];
       //VERY IMPORTANT LINE.  TURNS OFF WOOD
       material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/ar-lab/assets/textures/blank.jpg");
     }
