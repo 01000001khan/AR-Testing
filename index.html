@@ -83,7 +83,9 @@
 
   <script>
     
-    //called on change in colour selection list
+  
+
+  //called on change in colour selection list
   function updateFounderCol(){
     //const founderSpeaker = document.getElementById("founder40bstand");
     const founderSpeaker = document.querySelector("#founder40bstand");
@@ -98,9 +100,9 @@
     console.log(finishName);
 
 
-    let material = founderSpeaker.model.materials[0];
-    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
-    material.pbrMetallicRoughness["baseColorTexture"].texture.source.setURI(founderControls.value);
+    var materialTwo = founderSpeaker.model.materials[0];
+    materialTwo.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
+    //materialTwo.pbrMetallicRoughness["baseColorTexture"].texture.source.setURI(founderControls.value);
 
   }
     
