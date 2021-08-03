@@ -129,10 +129,10 @@
   //called on change in colour selection list
   function updateFounderCol(){
     let modelViewerObject = document.getElementById("founder40bstand");
-    const texture = document.getElementById("founder40b-color-controls").value;
+    let founderControls = document.getElementById("founder40b-color-controls");
     
     let material = modelViewerObject.model.materials[0];
-    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(texture);
+    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
     
   }
 
