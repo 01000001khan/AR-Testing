@@ -87,7 +87,7 @@
     
   //called on change in colour selection list
   function updateCol(){
-    let modelViewerObject = document.getElementById("speaker");
+    const modelViewerObject = document.getElementById("speaker");
 
     const colorString = document.getElementById("color-controls").value;
     
@@ -128,10 +128,13 @@
 
   //called on change in colour selection list
   function updateFounderCol(){
-    let modelViewerObject = document.getElementById("founder40bstand");
-    let founderControls = document.getElementById("founder40b-color-controls");
+    const founderSpeaker = document.getElementById("founder40bstand");
+    var founderControls = document.getElementById("founder40b-color-controls");
     
-    let material = modelViewerObject.model.materials[0];
+    var finishName = founderControls.options[founderControls.selectedIndex].text;
+    console.log(founderControls.text);
+
+    let material = founderSpeaker.model.materials[0];
     material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
     
   }
