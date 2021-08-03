@@ -83,7 +83,26 @@
 
   <script>
     
-  
+    //called on change in colour selection list
+  function updateFounderCol(){
+    //const founderSpeaker = document.getElementById("founder40bstand");
+    const founderSpeaker = document.querySelector("#founder40bstand");
+
+    //var founderControls = document.getElementById("founder40b-color-controls");
+    var founderControls = document.querySelector("#founder40b-color-controls");
+
+
+
+    
+    var finishName = founderControls.options[founderControls.selectedIndex].text;
+    console.log(finishName);
+
+
+    let material = founderSpeaker.model.materials[0];
+    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
+    material.pbrMetallicRoughness["baseColorTexture"].texture.source.setURI(founderControls.value);
+
+  }
     
   //called on change in colour selection list
   function updateCol(){
@@ -126,18 +145,6 @@
     
   }
 
-  //called on change in colour selection list
-  function updateFounderCol(){
-    const founderSpeaker = document.getElementById("founder40bstand");
-    var founderControls = document.getElementById("founder40b-color-controls");
-    
-    var finishName = founderControls.options[founderControls.selectedIndex].text;
-    console.log(founderControls.text);
-
-    let material = founderSpeaker.model.materials[0];
-    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(founderControls.value);
-    
-  }
 
   
   /*
