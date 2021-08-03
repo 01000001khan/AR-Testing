@@ -69,8 +69,8 @@
       -->
       
       <select class="controls" ,="" id="founder40b-color-controls" onchange="updateFounderCol();" >
-        <option value="assets\textures\blackWalnut.jpg" selected="selected">Black Walnut</option>
-        <option value="assets\textures\redCherry.jpg">Red Cherry</option>
+        <option value="/AR-Testing/assets/textures/blackWalnut.jpg" selected="selected">Black Walnut</option>
+        <option value="/AR-Testing/assets/textures/redCherry.jpg">Red Cherry</option>
       </select>
       
       
@@ -113,7 +113,7 @@
     console.log(finishName);
     if (finishName === "WoodTest"){
       console.log("Wood");
-      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/assets/textures/wood.jpg");
+      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/AR-Testing/assets/textures/wood.jpg");
     }
     else
     {
@@ -121,7 +121,7 @@
       //material['baseColorTexture'].setTexture("/assets/textures/wood.jpg"); 
       let material = modelViewerObject.model.materials[0];
       //VERY IMPORTANT LINE.  TURNS OFF WOOD
-      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/assets/textures/blank.jpg");
+      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/AR-Testing/assets/textures/blank.jpg");
     }
     
   }
