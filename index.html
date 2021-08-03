@@ -47,9 +47,39 @@
     <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">View in AR</button>
     
   </model-viewer>
+  
+  
   <br>
   <br>
   <model-viewer id="test" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate environment-image="neutral" src="assets/defiancex15.glb"></model-viewer>
+  <br>
+  <br>
+
+  <model-viewer id="founder40bstand" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate environment-image="neutral" src="assets\founder40bStandPrototype.glb">
+    <!-- Persona 7F -->      
+      <!--
+      <div class="controls" ,="" id="color-controls">
+        <button data-color="0.03,0.06,0.10,1">Blue</button>
+        <button data-color="1,1,0.8,1">White</button>
+        <button data-color="0.09,0.09,0.09,1">Gray</button>
+        <button data-color="1,0.5,0,1">Yellow Premium Finish</button>
+        <button data-color="0,0.2,0.5,1">These can/should be in a drop down list</button>
+  
+      </div>
+      -->
+      
+      <select class="controls" ,="" id="founder40b-color-controls" onchange="updateFounderCol();" >
+        <option value="assets\textures\blackWalnut.jpg" selected="selected">Black Walnut</option>
+        <option value="assets\textures\redCherry.jpg">Red Cherry</option>
+      </select>
+      
+      
+      <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">View in AR</button>
+      
+    </model-viewer>
+
+
+
 
   <script>
     
@@ -91,6 +121,14 @@
       //VERY IMPORTANT LINE.  TURNS OFF WOOD
       material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/ar-lab/assets/textures/blank.jpg");
     }
+    
+  }
+
+  //called on change in colour selection list
+  function updateFounderCol(){
+    const texture = document.getElementById("founder40b-color-controls").value;
+        
+    material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI(texture);
     
   }
 
