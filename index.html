@@ -47,9 +47,12 @@
     <button slot="ar-button" style="background-color: white; border-radius: 4px; border: none; position: absolute; bottom: 16px; right: 16px; ">View in AR</button>
     
   </model-viewer>
+  
+  
   <br>
   <br>
   <model-viewer id="test" ar ar-modes="webxr scene-viewer quick-look" camera-controls auto-rotate environment-image="neutral" src="assets/defiancex15.glb"></model-viewer>
+  <br>
 
   <br>
   <br>
@@ -58,10 +61,10 @@
 
   <script>
     
-  const modelViewerObject = document.getElementById("speaker");
-    
   //called on change in colour selection list
   function updateCol(){
+    const modelViewerObject = document.getElementById("speaker");
+
     const colorString = document.getElementById("color-controls").value;
     
  
@@ -86,18 +89,19 @@
     console.log(finishName);
     if (finishName === "WoodTest"){
       console.log("Wood");
-      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/ar-lab/assets/textures/wood.jpg");
+      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/AR-Testing/assets/textures/wood.jpg");
     }
     else
     {
       console.log("Not wood");
       //material['baseColorTexture'].setTexture("/assets/textures/wood.jpg"); 
-      
+      let material = modelViewerObject.model.materials[0];
       //VERY IMPORTANT LINE.  TURNS OFF WOOD
-      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/ar-lab/assets/textures/blank.jpg");
+      material.pbrMetallicRoughness['baseColorTexture'].texture.source.setURI("/AR-Testing/assets/textures/blank.jpg");
     }
     
   }
+
 
   
   /*
